@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.glitch-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 99;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(69, 74, 13, 0.3),
+    rgba(69, 74, 13, 0.3) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: glitchLines 0.45s infinite linear;
+  mix-blend-mode: screen;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+@keyframes glitchLines {
+  0% { background-position: 0 0; opacity: 0.1; }
+  25% { background-position: 0 25%; opacity: 0.25; }
+  50% { background-position: 0 50%; opacity: 0.05; }
+  75% { background-position: 0 75%; opacity: 0.3; }
+  100% { background-position: 0 100%; opacity: 0.1; }
+}
