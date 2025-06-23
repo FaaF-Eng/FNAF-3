@@ -1,7 +1,20 @@
+'use client'
+
+import { useCallback } from 'react'; //Para música
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
+
+
+
+
 export default function Home() {
   return(
 
     <div className="flex justify-center items-center select-none overflow-hidden">
+      <div className="fixed z-[999]">
+        <img src="spring_menu.gif" alt="spring" className=" h-250 opacity-30" />
+      </div>
       <div className="relative h-screen w-screen overflow-hidden bg-black z-[1]">
       {/* camada com glitch */}
 
@@ -24,6 +37,8 @@ export default function Home() {
             <button className="text-[25px]"style={{ textShadow: "1px 2px 10px #454a0d" }}>NEW GAME</button>
             <button className="text-[25px]"style={{ textShadow: "1px 2px 10px #454a0d" }}>LOAD GAME</button>
           </div>
+
+      
 
 
 
