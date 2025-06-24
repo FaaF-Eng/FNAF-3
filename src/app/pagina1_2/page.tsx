@@ -58,6 +58,7 @@ export default function Page1_2() {
         </h1>
         </div>
         </div>
+
     </div>
   )
 }

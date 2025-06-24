@@ -49,3 +49,81 @@ body {
   75% { background-position: 0 75%; opacity: 0.3; }
   100% { background-position: 0 100%; opacity: 0.1; }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes greenGlitch {
+  0% {
+    transform: translate(0);
+    opacity: 0.1;
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    opacity: 0.3;
+  }
+  20% {
+    transform: translate(3px, -1px);
+    opacity: 0.2;
+  }
+  30% {
+    transform: translate(-3px, 3px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(2px, -2px);
+    opacity: 0.15;
+  }
+  70% {
+    transform: translate(-1px, 1px);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 0.1;
+  }
+}
+
+.glitch-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    0deg,
+    rgb(6, 78, 6),
+    rgb(24, 34, 25) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  animation: greenGlitch 0.3s infinite;
+  mix-blend-mode: screen;
+}
+
+
+@keyframes fadeToBlack {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-to-black {
+  animation: fadeToBlack 1s ease-in-out forwards;
+  background-color: black;
+}
+
