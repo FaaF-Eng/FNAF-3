@@ -28,7 +28,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 99;
+  z-index: 0;
   background-image: repeating-linear-gradient(
     0deg,
     rgba(69, 74, 13, 0.3),
