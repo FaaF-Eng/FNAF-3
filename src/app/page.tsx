@@ -7,7 +7,11 @@ import { useRouter } from 'next/navigation';
 
 
 export default function Home() {
-
+useEffect(() => {
+  const audio = new Audio("/sounds/menu_music.mp3");
+  audio.loop = true; // faz a música tocar em loop
+  audio.play().catch((e) => console.warn("Erro ao tocar som:", e));
+  }, []);
 
   const router = useRouter(); // ✅ Instância do roteador do Next.js
   const playSoundAndNavigate = useCallback((path: string) => {
@@ -24,8 +28,8 @@ export default function Home() {
       <div className='relative h-screen w-screen overflow-hidden bg-black '></div>
 
          <div id="botões" className="fixed mt-80 mr-190 " style={{zIndex:10000}}>
-        <button onMouseEnter={() => playSoundAndNavigate('/')} className="text-[25px]"   style={{ textShadow: "1px 2px 10px #454a0d" }}>NEW GAME</button>
-        <br></br><br></br><button onMouseEnter={() => playSoundAndNavigate('/')} className="text-[25px]"style={{ textShadow: "1px 2px 10px #454a0d" }}>LOAD GAME</button>
+        <button onMouseEnter={() => playSoundAndNavigate('/')} className="text-[25px] transition-transform duration-300 hover:scale-110"   style={{ textShadow: "1px 2px 10px #454a0d" }}>NEW GAME</button>
+        <br></br><br></br><button onMouseEnter={() => playSoundAndNavigate('/')} className="text-[25px] transition-transform duration-300 hover:scale-110"style={{ textShadow: "1px 2px 10px #454a0d" }}>LOAD GAME</button>
       </div>   
 
 
