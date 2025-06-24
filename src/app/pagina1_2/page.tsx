@@ -30,7 +30,7 @@ export default function Page1_2() {
 
          <div id="botões" className="fixed mt-80 mr-190 " style={{zIndex:10000}}>
         <button onClick={() => playSoundAndNavigate('/pagina1_1')} className="text-[25px] "   style={{ textShadow: "1px 2px 10px #454a0d" }}>NEW GAME</button>
-        <br></br><br></br><button onClick={() => playSoundAndNavigate('')} className="text-[25px] "style={{ textShadow: "1px 2px 10px #454a0d" }}>▐ LOAD GAME</button>
+        <br></br><br></br><button onClick={() => playSoundAndNavigate('/pagina3')} className="text-[25px] "style={{ textShadow: "1px 2px 10px #454a0d" }}>▐ LOAD GAME</button>
       </div>   
 
 
