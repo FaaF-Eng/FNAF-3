@@ -1,12 +1,18 @@
 'use client'
-
+import { useCallback } from 'react'; //Para música
 import { useEffect, useRef } from 'react';
 
 export default function Page4() {
+
+  useEffect(() => {
+  const audio = new Audio("/sounds/ambience.mp3");
+  audio.loop = true; // faz a música tocar em loop
+  audio.play().catch((e) => console.warn("Erro ao tocar som:", e));
+  }, []);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e: MouseEvent) => { 
       const container = scrollRef.current;
       if (!container) return;
 
